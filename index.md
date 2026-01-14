@@ -14,7 +14,9 @@ permalink: /
 
   <h1 class="site-title">lucarchive2007</h1>
 
-  <p class="site-sub">An archive of notes, finds, and experiments.</p>
+  <p class="site-sub">digital daydreamer // 2007 hard-drive heart
+collecting songs, screenshots, stupid thoughts
+if found, please return to the internet</p>
 
   <a class="enter-button" href="{{ '/archive/' | relative_url }}">Enter the archive →</a>
 
