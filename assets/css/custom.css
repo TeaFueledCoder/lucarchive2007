@@ -1,4 +1,6 @@
 body { border: 10px solid red !important; }
+<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}?v=1">
+
 
 :root{
   --bg-dark: #0b0b0d;
