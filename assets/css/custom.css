@@ -1,3 +1,4 @@
+body { border: 10px solid red !important; }
 
 :root{
   --bg-dark: #0b0b0d;
