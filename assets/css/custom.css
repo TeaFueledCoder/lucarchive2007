@@ -30,8 +30,11 @@ body {
   border-right: 4px solid var(--red);
   padding: 3rem 2.5rem;
   box-sizing: border-box;
-}
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* ← This is vertical centering */
+}
 /* Center vertically on landing */
 .landing-wrap {
   display: flex;
