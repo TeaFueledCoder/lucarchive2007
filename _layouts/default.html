@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
+    </title>
+
+    <!-- Minima theme CSS (keeps the site looking normal) -->
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+
+    <!-- Your custom overrides (this is what you've been missing) -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}?v=1">
+  </head>
+
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+  </body>
+</html>
