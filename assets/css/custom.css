@@ -208,3 +208,33 @@ a:focus,
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* =========================================================
+   FRAME OVERLAY (behind content, inside the charcoal column)
+   ========================================================= */
+
+.frame{
+  position: relative;   /* anchors the overlay */
+  overflow: hidden;     /* keeps overlay inside rounded corners */
+}
+
+.frame > *{
+  position: relative;
+  z-index: 2;           /* ensures text/memes sit above overlay */
+}
+
+.frame::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;           /* behind content but above background */
+  pointer-events: none; /* overlay never blocks clicks */
+
+  background-image: url("/assets/images/overlays/red-tribal-overlay.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.18;        /* adjust: 0.10–0.30 usually */
+  mix-blend-mode: screen; /* makes red glow nicely on dark */
+}
