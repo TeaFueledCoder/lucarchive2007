@@ -1,13 +1,17 @@
-
-<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}?v=1">
-
-
 :root{
   --bg-dark: #0b0b0d;
   --slab: #111113;
   --text: #f2f2f2;
   --muted: #b5b5b5;
   --red: #b11226;
+
+  /* Column system knobs */
+  --content-max: 700px;
+  --frame-max: 1200px;
+  --frame-gap: 24px;
+  --frame-pad: 24px;
+  --frame-border: rgba(0,0,0,0.18);
+  --frame-fill: rgba(255,255,255,0.22);
 }
 
 /* --- Global background --- */
@@ -25,24 +29,80 @@ body {
   padding: 0;
 }
 
-/* --- Left slab --- */
-.archive-slab {
-  min-height: 100vh;
-  width: min(520px, 92vw);
-  background: var(--slab);
-  border-right: 4px solid var(--red);
-  padding: 3rem 2.5rem;
-  box-sizing: border-box;
+/* =========================================================
+   UNIVERSAL COLUMNS (applies to intro + archive + posts)
+   Requires your layout to wrap content like:
+   <div class="frame">{{ content }}</div>
+   ========================================================= */
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* ← This is vertical centering */
+.frame{
+  max-width: var(--frame-max);
+  margin: 0 auto;
+  padding: 0 var(--frame-pad);
+
+  display: grid;
+  grid-template-columns: 1fr minmax(0, var(--content-max)) 1fr;
+  gap: var(--frame-gap);
+
+  min-height: 100vh; /* makes the side columns span the viewport */
 }
+
+/* Put all content into the center column by default */
+.frame > *{
+  grid-column: 2;
+}
+
+/* Decorative side columns */
+.frame::before,
+.frame::after{
+  content: "";
+  border-left: 1px solid var(--frame-border);
+  border-right: 1px solid var(--frame-border);
+  background: var(--frame-fill);
+  border-radius: 12px;
+}
+
+.frame::before{ grid-column: 1; }
+.frame::after{  grid-column: 3; }
+
+/* Mobile: collapse to single column */
+@media (max-width: 900px){
+  .frame{
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .frame::before,
+  .frame::after{
+    display: none;
+  }
+  .frame > *{
+    grid-column: 1;
+  }
+}
+
+/* =========================================================
+   INTRO PAGE SLAB (kept, but now sits inside the center column)
+   ========================================================= */
+
 /* Center vertically on landing */
 .landing-wrap {
   display: flex;
   align-items: center;
   min-height: 100vh;
+}
+
+/* --- Slab --- */
+.archive-slab {
+  width: min(520px, 92vw);
+  background: var(--slab);
+  border-left: 4px solid var(--red);  /* looks nicer inside the center column */
+  padding: 3rem 2.5rem;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
 }
 
 /* Typography */
@@ -56,6 +116,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Button */
 .enter-button {
   display: inline-block;
   padding: 0.9rem 1.2rem;
@@ -73,16 +134,9 @@ body {
 @media (max-width: 700px){
   .archive-slab {
     width: 100%;
-    border-right: none;
+    border-left: none;
     border-bottom: 4px solid var(--red);
   }
 }
 
-a {
-  color: var(--red);
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ff2a3d; /* brighter red on hover */
-}
+/* ===========*
