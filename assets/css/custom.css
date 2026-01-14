@@ -10,12 +10,14 @@
   --frame-max: 1200px;
   --frame-gap: 24px;
   --frame-pad: 24px;
-  --frame-border: rgba(0,0,0,0.18);
-  --frame-fill: rgba(255,255,255,0.22);
+
+  /* Updated: darker columns */
+  --frame-border: rgba(255,255,255,0.08);
+  --frame-fill: rgba(17,17,19,0.92);
 }
 
 /* --- Global background --- */
-body {
+body{
   margin: 0;
   background-image: url("/assets/images/bg-checker.jpg");
   background-size: cover;
@@ -25,13 +27,13 @@ body {
 }
 
 /* --- Layout wrapper --- */
-.page-content {
+.page-content{
   padding: 0;
 }
 
 /* =========================================================
-   UNIVERSAL COLUMNS (applies to intro + archive + posts)
-   Requires your layout to wrap content like:
+   UNIVERSAL COLUMNS (intro + archive + posts)
+   Requires layout:
    <div class="frame">{{ content }}</div>
    ========================================================= */
 
@@ -44,12 +46,18 @@ body {
   grid-template-columns: 1fr minmax(0, var(--content-max)) 1fr;
   gap: var(--frame-gap);
 
-  min-height: 100vh; /* makes the side columns span the viewport */
+  min-height: 100vh;
 }
 
 /* Put all content into the center column by default */
 .frame > *{
   grid-column: 2;
+
+  /* Center content “card” look */
+  background: rgba(17,17,19,0.88);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
 }
 
 /* Decorative side columns */
@@ -81,21 +89,29 @@ body {
 }
 
 /* =========================================================
-   INTRO PAGE SLAB (kept, but now sits inside the center column)
+   INTRO PAGE SLAB (sits inside center column)
    ========================================================= */
 
 /* Center vertically on landing */
-.landing-wrap {
+.landing-wrap{
   display: flex;
   align-items: center;
   min-height: 100vh;
 }
 
+/* Prevent “double framing” on intro page:
+   the center column already has padding/background */
+.landing-wrap,
+.landing-wrap *{
+  background: none;
+  box-shadow: none;
+}
+
 /* --- Slab --- */
-.archive-slab {
+.archive-slab{
   width: min(520px, 92vw);
   background: var(--slab);
-  border-left: 4px solid var(--red);  /* looks nicer inside the center column */
+  border-left: 4px solid var(--red);
   padding: 3rem 2.5rem;
   box-sizing: border-box;
 
@@ -106,18 +122,18 @@ body {
 }
 
 /* Typography */
-.site-title {
+.site-title{
   font-size: 2.6rem;
   margin: 0 0 1rem 0;
 }
 
-.site-sub {
+.site-sub{
   color: var(--muted);
   margin-bottom: 2rem;
 }
 
 /* Button */
-.enter-button {
+.enter-button{
   display: inline-block;
   padding: 0.9rem 1.2rem;
   border: 1px solid var(--red);
@@ -126,17 +142,40 @@ body {
   border-radius: 6px;
 }
 
-.enter-button:hover {
+.enter-button:hover{
   background: var(--red);
 }
 
 /* Mobile: slab becomes full width */
 @media (max-width: 700px){
-  .archive-slab {
+  .archive-slab{
     width: 100%;
     border-left: none;
     border-bottom: 4px solid var(--red);
   }
 }
 
-/* ===========*
+/* =========================================================
+   LINKS (force overrides over Minima)
+   ========================================================= */
+
+a,
+a:visited,
+.site-title,
+.site-title:visited,
+.post-link,
+.post-link:visited,
+.page-link,
+.page-link:visited{
+  color: var(--red) !important;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+.post-link:hover,
+.page-link:hover{
+  color: #ff2a3d !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
