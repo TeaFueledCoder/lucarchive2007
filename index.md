@@ -1,11 +1,15 @@
 ---
 layout: default
 title: lucarchive2007
+permalink: /
 ---
 
-# lucarchive2007  
-
-Welcome to my magazine-lite archive.  
-Click the link below to enter the archive and explore the latest posts.  
-
-[Enter the Archive](/archive/)
+<div class="landing-wrap">
+  <div class="archive-slab">
+    <h1 class="site-title">lucarchive2007</h1>
+    <p class="site-sub">
+      An archive of notes, finds, and experiments.
+    </p>
+    <a class="enter-button" href="/archive/">Enter the archive →</a>
+  </div>
+</div>
