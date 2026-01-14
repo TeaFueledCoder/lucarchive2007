@@ -5,16 +5,12 @@
   --muted: #b5b5b5;
   --red: #b11226;
 
-  /* Column system knobs */
   --content-max: 700px;
-
-  /* Padding knobs */
   --frame-pad: 2rem;
 }
 
 /* =========================================================
    TYPOGRAPHY: Special Elite + hierarchy
-   (Make sure you load the font in _layouts/default.html head)
    ========================================================= */
 
 body,
@@ -41,7 +37,10 @@ p, li{
   line-height: 1.63;
 }
 
-/* --- Global background --- */
+/* =========================================================
+   GLOBAL BACKGROUND
+   ========================================================= */
+
 body{
   margin: 0;
   background-image: url("/assets/images/bg-checker.jpg");
@@ -51,30 +50,25 @@ body{
   color: var(--text);
 }
 
-/* --- Layout wrapper --- */
+/* Layout wrapper */
 .page-content{
   padding: 0;
 }
 
 /* =========================================================
-   UNIVERSAL SOLID COLUMN (intro + archive + posts)
-   Requires layout:
-   <div class="frame">{{ content }}</div>
+   SOLID CENTER COLUMN
    ========================================================= */
 
 .frame{
   max-width: var(--content-max);
   margin: 0 auto;
   padding: var(--frame-pad);
-
-  background: var(--slab);     /* solid dark grey column */
+  background: var(--slab);
   border-radius: 12px;
-
-  min-height: 100vh;           /* full-height column */
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
-/* Mobile: edge-to-edge feel */
 @media (max-width: 700px){
   .frame{
     padding: 1.5rem;
@@ -84,17 +78,15 @@ body{
 }
 
 /* =========================================================
-   INTRO PAGE SLAB (sits inside the solid column)
+   INTRO SLAB
    ========================================================= */
 
-/* Center vertically on landing */
 .landing-wrap{
   display: flex;
   align-items: center;
   min-height: 100vh;
 }
 
-/* --- Slab --- */
 .archive-slab{
   width: 100%;
   background: var(--slab);
@@ -108,7 +100,16 @@ body{
   border-radius: 12px;
 }
 
-/* Typography */
+@media (max-width: 700px){
+  .archive-slab{
+    border-left: none;
+    border-bottom: 4px solid var(--red);
+    padding: 2.2rem 1.5rem;
+    border-radius: 10px;
+  }
+}
+
+/* Intro text */
 .site-title{
   font-size: 2.6rem;
   margin: 0 0 1rem 0;
@@ -133,18 +134,58 @@ body{
   background: var(--red);
 }
 
-/* Mobile: slab styling */
-@media (max-width: 700px){
-  .archive-slab{
-    border-left: none;
-    border-bottom: 4px solid var(--red);
-    padding: 2.2rem 1.5rem;
-    border-radius: 10px;
-  }
+/* =========================================================
+   INTRO MEMES
+   ========================================================= */
+
+.meme-row{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.meme-row--top{
+  margin-bottom: 1.2rem;
+}
+
+.meme-row--bottom{
+  margin-top: 1.6rem;
+}
+
+.meme{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+  position: relative;
+}
+
+/* Smaller icon accent */
+.meme--d{
+  max-width: 190px;
+  justify-self: start;
+}
+
+/* “Pinned scrapbook” offsets — tweak freely */
+.meme--a{ top: -6px; left: -4px; transform: rotate(-1.2deg); }
+.meme--b{ top:  4px; left:  2px; transform: rotate(0.9deg); }
+.meme--c{ top:  3px; left: -3px; transform: rotate(-0.7deg); }
+.meme--d{ top: 10px; left:  8px; transform: rotate(1.4deg); }
+
+@media (min-width: 780px){
+  .meme-row{ gap: 16px; }
+  .meme-row--top{ margin-bottom: 1.4rem; }
+  .meme-row--bottom{ margin-top: 1.8rem; }
+}
+
+@media (max-width: 420px){
+  .meme--d{ max-width: 150px; }
 }
 
 /* =========================================================
-   LINKS (force overrides over Minima)
+   LINK OVERRIDES
    ========================================================= */
 
 a,
