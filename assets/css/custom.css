@@ -1,0 +1,72 @@
+:root{
+  --bg-dark: #0b0b0d;
+  --slab: #111113;
+  --text: #f2f2f2;
+  --muted: #b5b5b5;
+  --red: #b11226;
+}
+
+/* --- Global background --- */
+body {
+  margin: 0;
+  background-image: url("/assets/images/bg-checker.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+/* --- Layout wrapper --- */
+.page-content {
+  padding: 0;
+}
+
+/* --- Left slab --- */
+.archive-slab {
+  min-height: 100vh;
+  width: min(520px, 92vw);
+  background: var(--slab);
+  border-right: 4px solid var(--red);
+  padding: 3rem 2.5rem;
+  box-sizing: border-box;
+}
+
+/* Center vertically on landing */
+.landing-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Typography */
+.site-title {
+  font-size: 2.6rem;
+  margin: 0 0 1rem 0;
+}
+
+.site-sub {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.enter-button {
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--red);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.enter-button:hover {
+  background: var(--red);
+}
+
+/* Mobile: slab becomes full width */
+@media (max-width: 700px){
+  .archive-slab {
+    width: 100%;
+    border-right: none;
+    border-bottom: 4px solid var(--red);
+  }
+}
