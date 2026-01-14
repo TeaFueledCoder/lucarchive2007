@@ -6,6 +6,10 @@ permalink: /
 
 <div class="landing-wrap">
   <div class="archive-slab">
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  ]
     <h1 class="site-title">lucarchive2007</h1>
     <p class="site-sub">
       An archive of notes, finds, and experiments.
