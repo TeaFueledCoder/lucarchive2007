@@ -12,6 +12,35 @@
   --frame-pad: 2rem;
 }
 
+/* =========================================================
+   TYPOGRAPHY: Special Elite + hierarchy
+   (Make sure you load the font in _layouts/default.html head)
+   ========================================================= */
+
+body,
+h1, h2, h3, h4, h5, h6{
+  font-family: "Special Elite", cursive;
+  text-rendering: optimizeLegibility;
+}
+
+p, li, blockquote, ol, ul, dl, dd{
+  font-family: "Special Elite", cursive;
+}
+
+code, pre{
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Hierarchy */
+h1{ font-size: 2.8rem; }
+h2{ font-size: 2.4rem; }
+h3{ font-size: 2rem; }
+
+p, li{
+  font-size: 1rem;
+  line-height: 1.63;
+}
+
 /* --- Global background --- */
 body{
   margin: 0;
