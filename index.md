@@ -6,10 +6,22 @@ permalink: /
 
 <div class="landing-wrap">
   <div class="archive-slab">
-    <h1 class="site-title">lucarchive2007</h1>
-    <p class="site-sub">
-      An archive of notes, finds, and experiments.
-    </p>
-    <a class="enter-button" href="/archive/">Enter the archive →</a>
+
+  <div class="meme-row meme-row--top" aria-label="Top memes">
+      <img class="meme meme--a" src="{{ '/assets/images/memes/stay-up-late.jpg' | relative_url }}" alt="Stay up late meme">
+      <img class="meme meme--b" src="{{ '/assets/images/memes/warning-ladies.jpg' | relative_url }}" alt="Warning ladies meme">
+    </div>
+
+  <h1 class="site-title">lucarchive2007</h1>
+
+  <p class="site-sub">An archive of notes, finds, and experiments.</p>
+
+  <a class="enter-button" href="{{ '/archive/' | relative_url }}">Enter the archive →</a>
+
+  <div class="meme-row meme-row--bottom" aria-label="Bottom memes">
+      <img class="meme meme--c" src="{{ '/assets/images/memes/ego.jpg' | relative_url }}" alt="Ego meme">
+      <img class="meme meme--d" src="{{ '/assets/images/memes/msn-music.jpg' | relative_url }}" alt="MSN music icon">
+    </div>
+
   </div>
 </div>
