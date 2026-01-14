@@ -7,13 +7,9 @@
 
   /* Column system knobs */
   --content-max: 700px;
-  --frame-max: 1200px;
-  --frame-gap: 24px;
-  --frame-pad: 24px;
 
-  /* Updated: darker columns */
-  --frame-border: rgba(255,255,255,0.08);
-  --frame-fill: rgba(17,17,19,0.92);
+  /* Padding knobs */
+  --frame-pad: 2rem;
 }
 
 /* --- Global background --- */
@@ -32,64 +28,34 @@ body{
 }
 
 /* =========================================================
-   UNIVERSAL COLUMNS (intro + archive + posts)
+   UNIVERSAL SOLID COLUMN (intro + archive + posts)
    Requires layout:
    <div class="frame">{{ content }}</div>
    ========================================================= */
 
 .frame{
-  max-width: var(--frame-max);
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 var(--frame-pad);
+  padding: var(--frame-pad);
 
-  display: grid;
-  grid-template-columns: 1fr minmax(0, var(--content-max)) 1fr;
-  gap: var(--frame-gap);
-
-  min-height: 100vh;
-}
-
-/* Put all content into the center column by default */
-.frame > *{
-  grid-column: 2;
-
-  /* Center content “card” look */
-  background: rgba(17,17,19,0.88);
-  padding: 2rem;
+  background: var(--slab);     /* solid dark grey column */
   border-radius: 12px;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+
+  min-height: 100vh;           /* full-height column */
+  box-sizing: border-box;
 }
 
-/* Decorative side columns */
-.frame::before,
-.frame::after{
-  content: "";
-  border-left: 1px solid var(--frame-border);
-  border-right: 1px solid var(--frame-border);
-  background: var(--frame-fill);
-  border-radius: 12px;
-}
-
-.frame::before{ grid-column: 1; }
-.frame::after{  grid-column: 3; }
-
-/* Mobile: collapse to single column */
-@media (max-width: 900px){
+/* Mobile: edge-to-edge feel */
+@media (max-width: 700px){
   .frame{
-    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    border-radius: 0;
     min-height: auto;
-  }
-  .frame::before,
-  .frame::after{
-    display: none;
-  }
-  .frame > *{
-    grid-column: 1;
   }
 }
 
 /* =========================================================
-   INTRO PAGE SLAB (sits inside center column)
+   INTRO PAGE SLAB (sits inside the solid column)
    ========================================================= */
 
 /* Center vertically on landing */
@@ -99,17 +65,9 @@ body{
   min-height: 100vh;
 }
 
-/* Prevent “double framing” on intro page:
-   the center column already has padding/background */
-.landing-wrap,
-.landing-wrap *{
-  background: none;
-  box-shadow: none;
-}
-
 /* --- Slab --- */
 .archive-slab{
-  width: min(520px, 92vw);
+  width: 100%;
   background: var(--slab);
   border-left: 4px solid var(--red);
   padding: 3rem 2.5rem;
@@ -146,12 +104,13 @@ body{
   background: var(--red);
 }
 
-/* Mobile: slab becomes full width */
+/* Mobile: slab styling */
 @media (max-width: 700px){
   .archive-slab{
-    width: 100%;
     border-left: none;
     border-bottom: 4px solid var(--red);
+    padding: 2.2rem 1.5rem;
+    border-radius: 10px;
   }
 }
 
