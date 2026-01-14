@@ -238,3 +238,11 @@ a:focus,
   opacity: 0.18;        /* adjust: 0.10–0.30 usually */
   mix-blend-mode: screen; /* makes red glow nicely on dark */
 }
+
+.player{
+  margin: 1.5rem 0 2rem;
+  padding: 0.6rem;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+}
