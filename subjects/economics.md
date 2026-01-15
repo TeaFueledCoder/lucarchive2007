@@ -1,6 +1,6 @@
 ---
 layout: subject
-title: economics
+title: Economics
 permalink: /subjects/economics/
 subject_key: economics
 ---
