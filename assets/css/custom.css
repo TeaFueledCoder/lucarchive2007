@@ -426,7 +426,7 @@ body.home .nav-back-img{
   display: block;
   text-decoration: none;
   width: 100%;
-  max-width: 260px;  /* prevents absurd stretching */
+  max-width: 300px;  /* prevents absurd stretching */
 }
 
 .subject-tile img{
