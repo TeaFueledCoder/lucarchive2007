@@ -7,7 +7,16 @@ permalink: /albums/
 <h1>album wall</h1>
 <p class="muted">click a cover to open the file.</p>
 
-<div class="album-wall" id="albumWall"></div>
+<div class="album-wall" id="albumWall">
+  <button class="album-tile"
+    data-title="Vex Red — Can't Smile - Start With A Strong And Persistent Desire"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Nu-metal Electronic fusion + they're from Hampshire."
+    data-cover="/assets/images/albums/SSPD.jpg"
+    data-spotify="https://open.spotify.com/embed/track/3ivsBS2Sko6udZ7GWarDTu">
+    <img src="/assets/images/albums/SSPD.jpg" alt="Vex Red album cover">
+  </button>
+</div>
 
 <div class="album-modal" id="albumModal" aria-hidden="true">
   <div class="album-modal__backdrop" data-close></div>
