@@ -420,7 +420,7 @@ body.home .nav-back-img{
 
 @media (min-width: 1100px) {
   .subject-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
