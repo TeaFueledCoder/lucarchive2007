@@ -1,6 +1,6 @@
 ---
 layout: subject
-title: History  # or appropriate subject name
+title: History
 permalink: /subjects/history/
 subject_key: history
 ---
