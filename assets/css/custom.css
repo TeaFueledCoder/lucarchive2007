@@ -449,7 +449,7 @@ main {
 }
 
 .subject-tile img {
-  width: 100%;
+  width: 200%;
   height: 360px;   /* adjust this number to taste */
   object-fit: cover;
   display: block;
