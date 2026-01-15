@@ -1,7 +1,7 @@
 // /assets/js/engagement.js
 (() => {
-  const SUPABASE_URL = "YOUR_SUPABASE_URL";
-  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+  const SUPABASE_URL = "https://sswxgbvumourgtqttbug.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_pvHAMV1Z-5gzS7CgkDk6Zg_YAK2FD-l";
 
   // Supabase client must be loaded via CDN before this runs
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
