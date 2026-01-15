@@ -247,6 +247,38 @@ a:focus,
   border-radius: 14px;
 }
 
+.nav-back-img{
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 10;
+}
+
+.nav-back-img img{
+  width: 88px;            /* fire-exit sign wants to be readable */
+  height: auto;
+  display: block;
+
+  opacity: 0.9;
+  transition: transform 140ms ease, opacity 140ms ease;
+}
+
+.nav-back-img:hover img{
+  opacity: 1;
+  transform: translateX(-4px); /* “exit” motion */
+}
+
+@media (max-width: 700px){
+  .nav-back-img{
+    top: 0.9rem;
+    right: 0.9rem;
+  }
+
+  .nav-back-img img{
+    width: 64px;
+  }
+}
+
 /* =======================
    Album Wall grid (normalized)
    ======================= */
