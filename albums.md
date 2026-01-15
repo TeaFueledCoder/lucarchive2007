@@ -40,9 +40,9 @@ permalink: /albums/
   data-title="Quicksand — Slip"
   data-meta="first listened: 2026 • format: CD"
   data-text="Post-hardcore with weight, groove, and restraint."
-  data-cover="/assets/images/albums/slip.jpg"
+  data-cover="/assets/images/albums/quicksand.jpg"
   data-spotify="https://open.spotify.com/embed/track/6yG5f1n4LZ9zQx4K6yH0dG">
-  <img src="/assets/images/albums/slip.jpg" alt="Slip album cover">
+  <img src="/assets/images/albums/quicksand.jpg" alt="Slip album cover">
 </button>
 
 <button class="album-tile"
@@ -58,9 +58,9 @@ permalink: /albums/
   data-title="Hell Is For Heroes — The Neon Handshake"
   data-meta="first listened: 2026 • format: CD"
   data-text="UK post-hardcore with arena-scale intent."
-  data-cover="/assets/images/albums/the-neon-handshake.jpg"
+  data-cover="/assets/images/albums/The-neon-handshake.jpg"
   data-spotify="https://open.spotify.com/embed/track/2n6RZQy0QZpZ9WJx8m8QfZ">
-  <img src="/assets/images/albums/the-neon-handshake.jpg" alt="The Neon Handshake album cover">
+  <img src="/assets/images/albums/The-neon-handshake.jpg" alt="The Neon Handshake album cover">
 </button>
 
 <button class="album-tile"
@@ -184,9 +184,9 @@ permalink: /albums/
   data-title="Elliott Smith — Elliott Smith"
   data-meta="first listened: 2026 • format: Digital"
   data-text="Intimate songwriting; nothing hidden."
-  data-cover="/assets/images/albums/elliott-smith.jpg"
+  data-cover="/assets/images/albums/eliott-smith.jpg"
   data-spotify="https://open.spotify.com/embed/track/4ZQ9n8JpH0F6mWZyQY">
-  <img src="/assets/images/albums/elliott-smith.jpg" alt="Elliott Smith album cover">
+  <img src="/assets/images/albums/eliott-smith.jpg" alt="Eliott Smith album cover">
 </button>
 
 
