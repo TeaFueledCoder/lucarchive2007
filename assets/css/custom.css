@@ -404,17 +404,7 @@ body.home .nav-back-img{
   margin-top: -0.4rem;
 }
 
-/* === Force Subjects page to use full width === */
-
-.page-content,
-.wrapper,
-.container,
-main {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-/* Final Subjects grid rules */
+/* ===== Subjects Grid – clean final version ===== */
 
 .subject-grid{
   display: grid;
@@ -422,34 +412,36 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: 100%;
   margin: 0 auto;
-  padding: 0;              /* <- stops squishing */
-  box-sizing: border-box;
+  padding: 0;
+  justify-items: center;   /* centers tiles inside grid cells */
 }
 
-@media (min-width: 900px){
+@media (min-width: 1000px){
   .subject-grid{
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* <- 4 across */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 across on desktop */
   }
 }
 
 .subject-tile{
   display: block;
   text-decoration: none;
+  width: 100%;
+  max-width: 260px;  /* prevents absurd stretching */
 }
 
 .subject-tile img{
   width: 100%;
-  aspect-ratio: 1 / 1;     /* <- perfect squares */
-  height: auto;            /* <- don’t hardcode height */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  border-radius: 10px;     /* optional */
+  border-radius: 10px;
 }
 
 .subject-tile .label{
-  margin-top: 12px;
+  margin-top: 10px;
   text-align: center;
   font-weight: 600;
 }
+
 
 
