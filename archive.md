@@ -3,4 +3,5 @@ layout: home
 title: Archive
 permalink: /archive/
 ---
-[album wall →](/albums/){: .enter-button }
+<a href="{{ '/albums/' | relative_url }}">album wall</a>
+
