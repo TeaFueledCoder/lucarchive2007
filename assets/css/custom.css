@@ -280,9 +280,12 @@ a:focus,
   
   .nav-back-img:hover img{
   filter: drop-shadow(0 0 6px rgba(255,0,0,0.6));
-  }
-  
 }
+  
+  body.home .nav-back-img{
+  display: none;
+}
+
 
 /* =======================
    Album Wall grid (normalized)
