@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <meta name="post-slug" content="{{ page.slug | default: page.url }}">
 
 
     <title>
@@ -18,7 +19,7 @@
     <!-- Your custom overrides (this is what you've been missing) -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}?v=1">
   </head>
-
+  
   <body>
   <main class="page-content" aria-label="Content">
    
@@ -30,5 +31,7 @@
       {{ content }}
     </div>
   </main>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="{{ '/assets/js/engagement.js' | relative_url }}"></script>
+  </body>
 
