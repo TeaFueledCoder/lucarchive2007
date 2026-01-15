@@ -9,7 +9,7 @@ permalink: /subjects/
   <div class="grid subject-grid">
 
   <a class="subject-tile" href="{{ '/subjects/english/' | relative_url }}">
-    <img src="{{ '/assets/subjects/english.jpg' | relative_url }}" alt="English subject marker">
+    <img src="{{ '/assets/subjects/English.jpg' | relative_url }}" alt="English subject marker">
     <div class="label">English</div>
   </a>
 
