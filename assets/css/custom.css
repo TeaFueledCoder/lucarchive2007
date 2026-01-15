@@ -403,3 +403,39 @@ body.home .nav-back-img{
   color: var(--muted);
   margin-top: -0.4rem;
 }
+
+/* === Essay Archive: Subjects grid === */
+.subject-grid{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;            /* mobile: 1 column */
+}
+
+@media (min-width: 700px){
+  .subject-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1100px){
+  .subject-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); } /* desktop: 4 across */
+}
+
+.subject-tile{
+  display: block;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.4);
+}
+
+.subject-tile img{
+  width: 100%;
+  height: 170px;                         /* forces same displayed size */
+  object-fit: cover;                     /* crops consistently */
+  display: block;
+}
+
+.subject-tile .label{
+  padding: 12px 12px 14px;
+  font-weight: 600;
+}
+
