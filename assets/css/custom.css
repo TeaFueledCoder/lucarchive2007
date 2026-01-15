@@ -67,6 +67,10 @@ body{
   border-radius: 12px;
   min-height: 100vh;
   box-sizing: border-box;
+
+  /* anchors overlay + back button */
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 700px){
@@ -213,31 +217,30 @@ a:focus,
    FRAME OVERLAY (behind content, inside the charcoal column)
    ========================================================= */
 
-.frame{
-  position: relative;   /* anchors the overlay */
-  overflow: hidden;     /* keeps overlay inside rounded corners */
-}
-
 .frame > *{
   position: relative;
-  z-index: 2;           /* ensures text/memes sit above overlay */
+  z-index: 2; /* ensures content sits above overlay */
 }
 
 .frame::before{
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;           /* behind content but above background */
-  pointer-events: none; /* overlay never blocks clicks */
+  z-index: 1;
+  pointer-events: none;
 
   background-image: url("/assets/images/overlays/red-tribal-overlay.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 
-  opacity: 0.18;        /* adjust: 0.10–0.30 usually */
-  mix-blend-mode: screen; /* makes red glow nicely on dark */
+  opacity: 0.18;
+  mix-blend-mode: screen;
 }
+
+/* =========================================================
+   PLAYER SHELL
+   ========================================================= */
 
 .player{
   margin: 1.5rem 0 2rem;
@@ -247,25 +250,34 @@ a:focus,
   border-radius: 14px;
 }
 
+/* =========================================================
+   NAV BACK (fire exit)
+   ========================================================= */
+
 .nav-back-img{
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  z-index: 10;
+  z-index: 10; /* above content, below modal */
 }
 
 .nav-back-img img{
-  width: 88px;            /* fire-exit sign wants to be readable */
+  width: 88px;
   height: auto;
   display: block;
-
   opacity: 0.9;
-  transition: transform 140ms ease, opacity 140ms ease;
+  transition: transform 140ms ease, opacity 140ms ease, filter 140ms ease;
 }
 
 .nav-back-img:hover img{
   opacity: 1;
-  transform: translateX(-4px); /* “exit” motion */
+  transform: translateX(-4px);
+  filter: drop-shadow(0 0 6px rgba(255,0,0,0.6));
+}
+
+/* Hide on home if your theme uses body.home */
+body.home .nav-back-img{
+  display: none;
 }
 
 @media (max-width: 700px){
@@ -277,20 +289,14 @@ a:focus,
   .nav-back-img img{
     width: 64px;
   }
-  
-  .nav-back-img:hover img{
-  filter: drop-shadow(0 0 6px rgba(255,0,0,0.6));
-}
-  
-  body.home .nav-back-img{
-  display: none;
 }
 
+/* =========================================================
+   ALBUM WALL (stable, non-fragile)
+   ========================================================= */
 
-/* =======================
-   Album Wall grid (normalized)
-   ======================= */
-.album-wall{
+/* Anchor specificity to .frame so theme CSS can't casually override it */
+.frame #albumWall{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 14px;
@@ -298,12 +304,13 @@ a:focus,
   margin-top: 1.5rem;
 }
 
-.album-tile{
+.frame #albumWall .album-tile{
+  width: 100%;
+  display: block;
   border: 0;
   padding: 0;
   background: transparent;
   cursor: pointer;
-  width: 100%;
 
   border-radius: 10px;
   overflow: hidden;
@@ -311,53 +318,42 @@ a:focus,
   transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
-.album-tile:hover{
+.frame #albumWall .album-tile:hover{
   transform: translateY(-2px);
   box-shadow: 0 0 0 1px rgba(255,255,255,0.14);
 }
 
-.album-tile img{
+.frame #albumWall .album-tile img{
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  border-radius: 10px;          /* safe even with overflow hidden */
   transition: transform 160ms ease;
 }
 
-.album-tile:active img{
+.frame #albumWall .album-tile:active img{
   transform: scale(0.98);
 }
 
-/* Force grid on the actual container by ID too */
-#albumWall{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 14px;
-  align-items: start;
-  margin-top: 1.5rem;
+/* Optional last-resort lock (comment in if you ever see it collapse again) */
+/* .frame #albumWall{ display: grid !important; } */
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.album-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
 }
 
-#albumWall .album-tile{
-  width: 100%;
-  display: block;
-}
-#albumWall .album-tile img{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-
-/* =======================
-   Modal
-   ======================= */
-.album-modal{ position: fixed; inset: 0; display: none; z-index: 9999; }
 .album-modal.is-open{ display: block; }
 
 .album-modal__backdrop{
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: rgba(0,0,0,0.65);
 }
 
@@ -372,13 +368,17 @@ a:focus,
 }
 
 .album-modal__close{
-  position: absolute; top: 12px; right: 12px;
-  background: transparent; border: 0;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: 0;
   color: var(--text);
   font-size: 1.1rem;
   cursor: pointer;
   opacity: 0.85;
 }
+
 .album-modal__close:hover{ opacity: 1; }
 
 .album-modal__grid{
@@ -402,14 +402,4 @@ a:focus,
 .album-modal__meta{
   color: var(--muted);
   margin-top: -0.4rem;
-}
-
-/* =======================
-   HARD LOCK: Album Wall Grid
-   ======================= */
-#albumWall{
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 14px;
-  align-items: start;
 }
