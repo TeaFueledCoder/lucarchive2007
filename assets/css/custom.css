@@ -404,38 +404,50 @@ body.home .nav-back-img{
   margin-top: -0.4rem;
 }
 
-/* === Essay Archive: Subjects grid === */
-.subject-grid{
+/* === Essay Archive: Subjects grid hard reset === */
+
+.subject-grid {
   display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;            /* mobile: 1 column */
+  gap: 24px;
+  grid-template-columns: 1fr;
 }
 
-@media (min-width: 700px){
-  .subject-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 700px) {
+  .subject-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (min-width: 1100px){
-  .subject-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); } /* desktop: 4 across */
+@media (min-width: 1100px) {
+  .subject-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.subject-tile{
+/* Tile container */
+.subject-tile {
   display: block;
-  border: 1px solid rgba(0,0,0,0.18);
-  border-radius: 10px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.4);
+  background: none;
+  border: none;
+  border-radius: 0 !important;   /* kills pill shapes */
+  padding: 0;
+  text-decoration: none;
 }
 
-.subject-tile img{
+/* Image normalization */
+.subject-tile img {
   width: 100%;
-  height: 170px;                         /* forces same displayed size */
-  object-fit: cover;                     /* crops consistently */
+  height: 220px;                 /* consistent strong presence */
+  object-fit: cover;
+  border-radius: 0 !important;   /* ensure square corners */
   display: block;
 }
 
-.subject-tile .label{
-  padding: 12px 12px 14px;
+/* Label */
+.subject-tile .label {
+  margin-top: 10px;
+  text-align: center;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
