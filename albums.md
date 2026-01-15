@@ -51,7 +51,7 @@ permalink: /albums/
  data-meta="first listened: 2026 • format: CD"
  data-text="UK post-hardcore with arena-scale intent."
  data-cover="/assets/images/albums/The-neon-handshake.jpg"
- data-spotify="https://open.spotify.com/embed/track/2n6RZQy0QZpZ9WJx8m8QfZ"> <img src="/assets/images/albums/the-neon-handshake.jpg" alt="The Neon Handshake album cover"> </button>
+ data-spotify="https://open.spotify.com/embed/track/2n6RZQy0QZpZ9WJx8m8QfZ"> <img src="/assets/images/albums/The-neon-handshake.jpg" alt="The Neon Handshake album cover"> </button>
 
 <button class="album-tile"
  data-title="Red House Painters — Old Ramon"
