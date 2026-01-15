@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<a class="backlink" href="{{ '/subjects/' | relative_url }}">← Back to Subjects</a>
+
+<h1>{{ page.title }}</h1>
+
+{% assign key = page.subject_key %}
+{% assign pages = site.data.essays[key] %}
+
+{% if pages == nil or pages.size == 0 %}
+  <p style="color: rgba(0,0,0,0.65);">
+    No essay pages found yet for this subject.
+  </p>
+{% else %}
+  <div class="grid essay-grid">
+    {% for img in pages %}
+      <img
+        class="essay-thumb"
+        src="{{ img.thumb | relative_url }}"
+        data-viewer-src="{{ img.full | relative_url }}"
+        alt="{{ page.title }} essay page"
+        loading="lazy"
+      />
+    {% endfor %}
+  </div>
+{% endif %}
