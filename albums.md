@@ -149,7 +149,7 @@ permalink: /albums/
  data-meta="first listened: 2026 • format: Digital"
  data-text="Intimate songwriting; nothing hidden."
  data-cover="/assets/images/albums/eliott-smith.jpg"
- data-spotify="https://open.spotify.com/embed/track/4ZQ9n8JpH0F6mWZyQY"> <img src="/assets/images/albums/elliott-smith.jpg" alt="Elliott Smith album cover"> </button>
+ data-spotify="https://open.spotify.com/embed/track/4ZQ9n8JpH0F6mWZyQY"> <img src="/assets/images/albums/eliott-smith.jpg" alt="Eliott Smith album cover"> </button>
 
 </div>
 
