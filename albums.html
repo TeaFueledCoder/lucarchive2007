@@ -7,33 +7,232 @@ permalink: /albums/
 <h1>album wall</h1>
 <p class="muted">click a cover to open the file.</p>
 
-<div class="album-wall" id="albumWall" aria-label="Album wall"></div>
+<div class="album-wall" id="albumWall">
 
-<div class="modal" id="albumModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="albumTitle">
-  <div class="modal-backdrop" data-close></div>
+  <button class="album-tile"
+    data-title="Vex Red — Can't Smile - Start With A Strong And Persistent Desire"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Nu-metal electronic fusion + they're from Hampshire."
+    data-cover="/assets/images/albums/SSPD.jpg"
+    data-spotify="https://open.spotify.com/embed/track/3ivsBS2Sko6udZ7GWarDTu">
+    <img src="/assets/images/albums/SSPD.jpg" alt="Vex Red album cover">
+  </button>
 
-  <div class="modal-panel" role="document">
-    <button class="modal-close" type="button" data-close aria-label="Close album details">×</button>
+  <button class="album-tile"
+    data-title="Rival Schools — United by Fate"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Post-hardcore clarity: melody under tension."
+    data-cover="/assets/images/albums/united-by-fate.jpg"
+    data-spotify="https://open.spotify.com/embed/track/01TxlIu2vVrtYZ7IsOilXs?si=6c919a4baed9440b">
+    <img src="/assets/images/albums/united-by-fate.jpg" alt="United by Fate album cover">
+  </button>
 
-    <div class="modal-header">
-      <h2 id="albumTitle"></h2>
-      <p class="muted" id="albumMeta"></p>
-    </div>
+  <button class="album-tile"
+    data-title="Snapcase — Progression Through Unlearning"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Hardcore stripped to its ethical engine."
+    data-cover="/assets/images/albums/progression-through-unlearning.jpg"
+    data-spotify="https://open.spotify.com/embed/track/5CPMLCyx8NmJeS0InT7bvr?si=7b5df2f8deb34d57">
+    <img src="/assets/images/albums/progression-through-unlearning.jpg" alt="Progression Through Unlearning album cover">
+  </button>
 
-    <div class="modal-body">
-      <img id="albumCover" src="" alt="" width="500" height="500" loading="lazy" />
-      <p id="albumText"></p>
+  <button class="album-tile"
+    data-title="Quicksand — Slip"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Post-hardcore with weight, groove, and restraint."
+    data-cover="/assets/images/albums/quicksand.jpg"
+    data-spotify="https://open.spotify.com/embed/track/75EwFbw7cPAoTFDAxtFfzm?si=32bdf167e053423b">
+    <img src="/assets/images/albums/quicksand.jpg" alt="Slip album cover">
+  </button>
 
-      <div class="spotify-player">
-        <iframe
-          id="albumPlayer"
-          title="Spotify player"
-          width="100%"
-          height="152"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-        </iframe>
+  <button class="album-tile"
+    data-title="My Vitriol — Finelines"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Shoegaze precision; quiet dynamics, sharp edges."
+    data-cover="/assets/images/albums/finelines.jpg"
+    data-spotify="https://open.spotify.com/embed/track/5n7YnKzLF7y8p2DD5GhHHi?si=c68201fcc8a84d25">
+    <img src="/assets/images/albums/finelines.jpg" alt="Finelines album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Hell Is For Heroes — The Neon Handshake"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="UK post-hardcore with arena-scale intent."
+    data-cover="/assets/images/albums/The-neon-handshake.jpg"
+    data-spotify="https://open.spotify.com/embed/track/2n6RZQy0QZpZ9WJx8m8QfZ">
+    <img src="/assets/images/albums/The-neon-handshake.jpg" alt="The Neon Handshake album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Red House Painters — Old Ramon"
+    data-meta="first listened: 2026 • format: Digital"
+    data-text="Slowcore patience; songs that refuse to hurry."
+    data-cover="/assets/images/albums/old-ramon.jpg"
+    data-spotify="https://open.spotify.com/embed/track/15XoeDfUqg2Q8rp2eOjAFe?si=816f8d6c48734cff">
+    <img src="/assets/images/albums/old-ramon.jpg" alt="Old Ramon album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Albert Lee & Hogan's Heroes — Like This"
+    data-meta="first listened: 2026 • format: Vinyl"
+    data-text="Virtuosic country rock with casual confidence."
+    data-cover="/assets/images/albums/like-this.jpg"
+    data-spotify="https://open.spotify.com/embed/track/7FkW0UEkpb2CYRyoyxd1Fs?si=9976395707d84a23">
+    <img src="/assets/images/albums/like-this.jpg" alt="Like This album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="The Inbreds — Kombinator"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Minimalist alt-rock: bass, drums, intention."
+    data-cover="/assets/images/albums/kombinator.jpg"
+    data-spotify="https://open.spotify.com/embed/track/5EV5fedarEMT1FhUStTK6y?si=527c11c86b994ac5">
+    <img src="/assets/images/albums/kombinator.jpg" alt="Kombinator album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Yppah — You Are Beautiful at All Times"
+    data-meta="first listened: 2026 • format: Digital"
+    data-text="Electronic melancholy with human warmth."
+    data-cover="/assets/images/albums/you-are-beautiful-at-all-times.jpg"
+    data-spotify="https://open.spotify.com/embed/track/3V8Y9PX3gYWv7WEvyz9EB7?si=b304be5cacf14d8e">
+    <img src="/assets/images/albums/you-are-beautiful-at-all-times.jpg" alt="You Are Beautiful at All Times album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Teenage Bottlerocket — They Came From the Shadows"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Pop-punk velocity, zero excess."
+    data-cover="/assets/images/albums/they-came-from-the-shadows.jpg"
+    data-spotify="https://open.spotify.com/embed/track/0hYXXh71wSzLEBmqdzRaaM?si=e16a26b4c7534b94">
+    <img src="/assets/images/albums/they-came-from-the-shadows.jpg" alt="They Came From the Shadows album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Les Sales Majestes — Bienvenue"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="French punk: direct action in three minutes."
+    data-cover="/assets/images/albums/bienvenue.jpg"
+    data-spotify="https://open.spotify.com/embed/track/1Sl1gfKBiAZao0ezeMOjcH?si=706e18f9737e483e">
+    <img src="/assets/images/albums/bienvenue.jpg" alt="Bienvenue album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Johnny Winter — 3rd Degree"
+    data-meta="first listened: 2026 • format: Vinyl"
+    data-text="Electric blues, sharp and unpolished."
+    data-cover="/assets/images/albums/3rd-degree.jpg"
+    data-spotify="https://open.spotify.com/embed/track/4hgv4QHuYGWkWJQOdDvkJL?si=590a1afb1e6b4643">
+    <img src="/assets/images/albums/3rd-degree.jpg" alt="3rd Degree album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Ash — 1977"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Power-pop optimism with distorted teeth."
+    data-cover="/assets/images/albums/1977.jpg"
+    data-spotify="https://open.spotify.com/embed/track/0cA41ydiosNCgmmGiCST65?si=09b04f9426c64ddc">
+    <img src="/assets/images/albums/1977.jpg" alt="1977 album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Stevie Ray Vaughan — Soul to Soul"
+    data-meta="first listened: 2026 • format: Vinyl"
+    data-text="Texas blues sharpened into radio fire."
+    data-cover="/assets/images/albums/soul-to-soul.jpg"
+    data-spotify="https://open.spotify.com/embed/track/6awNv9dgID6fpSZWtcKjJJ?si=f8e513a167bb4b8a">
+    <img src="/assets/images/albums/soul-to-soul.jpg" alt="Soul to Soul album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="B.B. King & Eric Clapton — Riding with the King"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Blues conversation across generations."
+    data-cover="/assets/images/albums/riding-with-the-king.jpg"
+    data-spotify="https://open.spotify.com/embed/track/6lWxIJH0CyUtmFaIAeVmTQ?si=9e74491811cb4cde">
+    <img src="/assets/images/albums/riding-with-the-king.jpg" alt="Riding with the King album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Albert Collins — Ice Pickin'"
+    data-meta="first listened: 2026 • format: Vinyl"
+    data-text="Cold-struck Telecaster blues."
+    data-cover="/assets/images/albums/ice-pickin.jpg"
+    data-spotify="https://open.spotify.com/embed/track/2ZM0QCkmFT26WnlfQskJLo?si=8701389312a044e9">
+    <img src="/assets/images/albums/ice-pickin.jpg" alt="Ice Pickin album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="3 Colours Red — Pure"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Brit alt-rock, clean hooks, clenched jaw."
+    data-cover="/assets/images/albums/pure.jpg"
+    data-spotify="https://open.spotify.com/embed/track/4NQF7p16e9sPcbWd5lquVd?si=abab07780681470a">
+    <img src="/assets/images/albums/pure.jpg" alt="Pure album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Joe Satriani — Is There Love in Space?"
+    data-meta="first listened: 2026 • format: CD"
+    data-text="Instrumental rock asking cosmic questions."
+    data-cover="/assets/images/albums/is-there-love-in-space.jpg"
+    data-spotify="https://open.spotify.com/embed/track/4SNehI217dU81J6A37B1GP?si=f512427b46ba4231">
+    <img src="/assets/images/albums/is-there-love-in-space.jpg" alt="Is There Love in Space album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Elliott Smith — Elliott Smith"
+    data-meta="first listened: 2026 • format: Digital"
+    data-text="Intimate songwriting; nothing hidden."
+    data-cover="/assets/images/albums/eliott-smith.jpg"
+    data-spotify="https://open.spotify.com/embed/track/1bFPKxP56XWDXJOwo3Kvfp?si=b2a683a7670f406a">
+    <img src="/assets/images/albums/eliott-smith.jpg" alt="Eliott Smith album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Eels — Beautiful Freak"
+    data-meta="first listened: 2025 • format: Cassette"
+    data-text="Honestly love this album, has such an apathetic warmth to all of the instruments. Plus the layered vocals tickle my brain."
+    data-cover="/assets/images/albums/beautifulfreak.jpg"
+    data-spotify="https://open.spotify.com/embed/track/0CVtjgDvVjMZqVC9JGlqNl?si=539e014a65bc4cee">
+    <img src="/assets/images/albums/beautifulfreak.jpg" alt="Beautiful Freak album cover">
+  </button>
+
+  <button class="album-tile"
+    data-title="Thursday — Full Collapse"
+    data-meta="first listened: 2026 • format: Digital"
+    data-text="It’s the kind of album that leans forward and expects you to do the same. Everything feels tightly packed. Emotion, noise, urgency. Nothing stretched longer than it needs to be."
+    data-cover="/assets/images/albums/full-collapse.jpg"
+    data-spotify="https://open.spotify.com/embed/track/3U5TzKrZP6sqiR43LQArV7?si=3946e81141854724">
+    <img src="/assets/images/albums/full-collapse.jpg" alt="Full Collapse album cover">
+  </button>
+
+</div>
+
+<!-- SINGLE modal (id must be unique, and this matches your JS) -->
+<div class="album-modal" id="albumModal" aria-hidden="true">
+  <div class="album-modal__backdrop" data-close></div>
+
+  <div class="album-modal__panel" role="dialog" aria-modal="true" aria-labelledby="albumTitle">
+    <button class="album-modal__close" type="button" data-close aria-label="Close">✕</button>
+
+    <div class="album-modal__grid">
+      <img class="album-modal__cover" id="albumCover" alt="">
+
+      <div class="album-modal__info">
+        <h2 id="albumTitle"></h2>
+        <p class="album-modal__meta" id="albumMeta"></p>
+        <p id="albumText"></p>
+
+        <div class="player">
+          <iframe id="albumPlayer"
+            style="border-radius:12px"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
       </div>
     </div>
   </div>
