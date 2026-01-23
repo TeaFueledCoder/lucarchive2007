@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}?v=1">
   </head>
   
-  <body>
+  <body class="{% if page.url == '/' %}is-home{% endif %}">
  <div class="side left"></div>
 <div class="side right"></div>
  <main class="page-content" aria-label="Content">
