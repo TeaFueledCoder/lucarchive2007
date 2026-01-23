@@ -7,12 +7,9 @@ permalink: /albums/
 <h1>album wall</h1>
 <p class="muted">click a cover to open the file.</p>
 
-<!-- JSON-driven wall mounts here -->
 <div class="album-wall" id="albumWall" aria-label="Album wall"></div>
 
-<!-- Modal: IDs must match /assets/js/album-wall.js -->
 <div class="modal" id="albumModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="albumTitle">
-  <!-- Backdrop click target -->
   <div class="modal-backdrop" data-close></div>
 
   <div class="modal-panel" role="document">
@@ -25,7 +22,6 @@ permalink: /albums/
 
     <div class="modal-body">
       <img id="albumCover" src="" alt="" width="500" height="500" loading="lazy" />
-
       <p id="albumText"></p>
 
       <div class="spotify-player">
@@ -44,49 +40,3 @@ permalink: /albums/
 </div>
 
 <script src="/assets/js/album-wall.js"></script>
-
-<!-- JSON wall renderer (tiny, separate so your modal JS stays untouched) -->
-<script>
-document.addEventListener("DOMContentLoaded", async () => {
-  const wall = document.getElementById("albumWall");
-  if (!wall) return;
-
-  try {
-    const res = await fetch("/data/albums.json", { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load albums.json (${res.status})`);
-    const data = await res.json();
-    const albums = data.albums || [];
-
-    wall.innerHTML = "";
-
-    for (const a of albums) {
-      const btn = document.createElement("button");
-      btn.className = "album-tile";
-      btn.type = "button";
-
-      // Keep your existing dataset contract
-      btn.dataset.title = a.titleFull || `${a.artist || ""} — ${a.title || ""}`.trim();
-      btn.dataset.meta = a.meta || "";
-      btn.dataset.text = a.text || "";
-      btn.dataset.cover = a.coverUrl || "";
-      btn.dataset.spotify = a.spotify?.favTrackEmbed || a.spotifyEmbed || "";
-
-      const img = document.createElement("img");
-      img.src = a.coverUrl || "";
-      img.width = 500;
-      img.height = 500;
-      img.loading = "lazy";
-
-      // Accessibility upgrade: meaningful alt
-      const artist = a.artist || "";
-      const title = a.title || "";
-      img.alt = (artist && title) ? `${artist} — ${title} (album cover)` : "Album cover";
-
-      btn.appendChild(img);
-      wall.appendChild(btn);
-    }
-  } catch (err) {
-    console.error(err);
-  }
-});
-</script>
