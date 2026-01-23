@@ -453,7 +453,7 @@ body.home .nav-back-img{
 .side {
   position: fixed;
   top: 0;
-  width: 180px;
+  width: 260px;
   height: 100vh;
   display: flex;
   flex-direction: column;
