@@ -490,3 +490,8 @@ body.home .nav-back-img{
   margin: 0 200px;
 }
 
+/* Hide side memes on the intro (home) page */
+body.home .side {
+  display: none !important;
+}
+
