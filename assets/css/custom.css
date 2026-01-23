@@ -451,7 +451,7 @@ body.home .nav-back-img{
 /* === Meme side rails === */
 
 .side {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 260px;
   height: 100vh;
