@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     coverEl.alt = title ? `${title} cover` : "Album cover";
 
     // Spotify iframe
-    playerEl.src = spotify || "";
+    playerEl.setAttribute("src", spotify || "");
 
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     modal.setAttribute("aria-hidden", "true");
 
     // Stop Spotify playback
-    playerEl.src = "";
+    playerEl.removeAttribute("src");
 
     document.body.style.overflow = "";
   };
