@@ -495,3 +495,29 @@ body.home .side {
   display: none !important;
 }
 
+/* photo grid code */
+.photo-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.photo-tile{
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.10);
+}
+
+.photo-tile img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 160ms ease;
+}
+
+.photo-tile:hover img{
+  transform: scale(1.03);
+}
+
