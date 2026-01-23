@@ -292,180 +292,106 @@ body.home .nav-back-img{
 }
 
 /* =========================================================
-   ALBUM WALL (stable, non-fragile)
+   MODAL (matches albums.html + album-wall.js)
    ========================================================= */
 
-/* Anchor specificity to .frame so theme CSS can't casually override it */
-.frame #albumWall{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 14px;
-  align-items: start;
-  margin-top: 1.5rem;
-}
-
-.frame #albumWall .album-tile{
-  width: 100%;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
-  transition: transform 120ms ease, box-shadow 120ms ease;
-}
-
-.frame #albumWall .album-tile:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.14);
-}
-
-.frame #albumWall .album-tile img{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  transition: transform 160ms ease;
-}
-
-.frame #albumWall .album-tile:active img{
-  transform: scale(0.98);
-}
-
-/* Optional last-resort lock (comment in if you ever see it collapse again) */
-/* .frame #albumWall{ display: grid !important; } */
-
-/* =========================================================
-   MODAL (matches albums.html markup)
-   ========================================================= */
-
-.modal{
+/* The overlay container */
+#albumModal.modal{
   position: fixed;
   inset: 0;
   display: none;
-  z-index: 9999;
-
-  /* Center the panel + give breathing room */
-  padding: 4vh 16px;
-  box-sizing: border-box;
+  z-index: 99999; /* absolutely above the wall + frame */
 }
 
-.modal.is-open{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* When JS adds .is-open */
+#albumModal.modal.is-open{
+  display: block;
 }
 
-.modal-backdrop{
+/* Backdrop */
+#albumModal .modal-backdrop{
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.70);
+  background: rgba(0,0,0,0.72);
 }
 
-/* The actual card */
-.modal-panel{
+/* Panel */
+#albumModal .modal-panel{
   position: relative;
-  width: min(92vw, 740px);      /* smaller than before */
-  max-height: calc(100vh - 8vh); /* keeps it inside viewport */
-  overflow-y: auto;              /* ✅ scroll inside modal */
-  -webkit-overflow-scrolling: touch;
-
+  width: min(900px, calc(100vw - 28px));
+  margin: 6vh auto;
   background: var(--slab);
   border-radius: 14px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.55);
-  padding: 1.1rem;
+  padding: 1.2rem;
 
-  /* Make sure it's above the backdrop */
-  z-index: 1;
+  /* mobile accessibility: allow scrolling inside the panel */
+  max-height: calc(100vh - 12vh);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Close button */
-.modal-close{
+#albumModal .modal-close{
   position: sticky; /* stays reachable while scrolling */
   top: 0;
   float: right;
+  margin: -0.2rem -0.2rem 0 0;
 
   background: transparent;
   border: 0;
   color: var(--text);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   cursor: pointer;
   opacity: 0.9;
-
-  padding: 0.2rem 0.4rem;
-  margin: -0.2rem -0.2rem 0.6rem 0;
 }
 
-.modal-close:hover{ opacity: 1; }
+#albumModal .modal-close:hover{ opacity: 1; }
 
-/* Header spacing */
-.modal-header{
-  padding-right: 2.2rem; /* room so the close button never overlaps text */
-}
-
-#albumMeta{
-  color: var(--muted);
-  margin-top: -0.3rem;
-}
-
-/* Body layout: cover + text/player */
-.modal-body{
+/* Body layout */
+#albumModal .modal-body{
   display: grid;
-  grid-template-columns: minmax(180px, 320px) 1fr;
-  gap: 1rem;
+  grid-template-columns: 320px 1fr;
+  gap: 1.2rem;
   align-items: start;
 }
 
-/* Cover: force it to behave */
-#albumCover{
+/* Cover sizing */
+#albumModal #albumCover{
   width: 100%;
   height: auto;
-  max-width: 320px;     /* keeps it from dominating */
   border-radius: 12px;
   box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
 }
 
-/* Text + player sit nicely */
-#albumText{
-  margin-top: 0.3rem;
+/* Spotify area */
+#albumModal .spotify-player{
+  margin-top: 0.8rem;
 }
 
-.spotify-player{
-  margin-top: 0.9rem;
+#albumModal #albumPlayer{
+  border: 0;
+  border-radius: 12px;
+  display: block;
+  width: 100%;
 }
 
-/* Mobile polish: stack, full usability, comfy tap targets */
+/* Mobile polish */
 @media (max-width: 860px){
-  .modal{
-    padding: 10px; /* tighter on small screens */
-    align-items: flex-end; /* “bottom sheet” vibe */
+  #albumModal .modal-panel{
+    margin: 2vh auto;
+    max-height: calc(100vh - 4vh);
   }
 
-  .modal-panel{
-    width: 100%;
-    max-height: calc(100vh - 20px);
-    border-radius: 14px;
-    padding: 1rem;
-  }
-
-  .modal-body{
+  #albumModal .modal-body{
     grid-template-columns: 1fr;
   }
 
-  #albumCover{
+  #albumModal #albumCover{
     max-width: 420px;
-    margin: 0 auto;
-  }
-
-  .modal-close{
-    font-size: 1.6rem;
-    padding: 0.4rem 0.6rem;
+    justify-self: center;
   }
 }
-
 
 /* ===== Subjects Grid – clean final version ===== */
 
