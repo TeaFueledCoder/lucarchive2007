@@ -458,7 +458,7 @@ body.home .nav-back-img{
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  padding: 32px;
   pointer-events: none;
   z-index: 0;
 }
