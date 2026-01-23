@@ -30,6 +30,7 @@ function populateSide(side, names) {
 
 async function runMemes() {
   if (isMobileish()) return;
+  if (document.body.classList.contains("is-home")) return;
 
   const left = document.querySelector(".side.left");
   const right = document.querySelector(".side.right");
