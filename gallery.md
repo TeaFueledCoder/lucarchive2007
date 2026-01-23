@@ -4,6 +4,8 @@ title: Gallery
 permalink: /gallery/
 ---
 
+<h1>Gallery</h1>
+
 <div class="gallery-slideshow" id="gallerySlideshow">
   <button class="gallery-btn prev" type="button" aria-label="Previous image">‹</button>
 
