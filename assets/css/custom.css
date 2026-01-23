@@ -448,7 +448,8 @@ body.home .nav-back-img{
 }
 
 
-/* Side meme columns */
+/* === Meme side rails === */
+
 .side {
   position: fixed;
   top: 0;
@@ -459,22 +460,30 @@ body.home .nav-back-img{
   gap: 16px;
   padding: 16px;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
-.side.left {
-  left: 0;
-}
-
-.side.right {
-  right: 0;
-}
+.side.left { left: 0; }
+.side.right { right: 0; }
 
 .side img {
   width: 100%;
+  height: auto;
   object-fit: contain;
   opacity: 0.9;
 }
+
+/* Keep main content above */
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Mobile safety: disable meme rails === */
+@media (max-width: 900px) {
+  .side { display: none !important; }
+}
+
 
 /* Push main content inward to make space for side columns */
 .content {
