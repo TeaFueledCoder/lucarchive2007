@@ -448,3 +448,36 @@ body.home .nav-back-img{
 }
 
 
+/* Side meme columns */
+.side {
+  position: fixed;
+  top: 0;
+  width: 180px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.side.left {
+  left: 0;
+}
+
+.side.right {
+  right: 0;
+}
+
+.side img {
+  width: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Push main content inward to make space for side columns */
+.content {
+  margin: 0 200px;
+}
+
