@@ -1,0 +1,33 @@
+---
+layout: post
+title: "Leaves"
+date: 2026-04-22 22:31:00 +0000
+---
+
+<div class="player">
+  <iframe style="border-radius:12px"
+    src=https://open.spotify.com/embed/track/1DrirX7vAJMDAoz37ZbSeA?si=c7c8aadb00144c6e
+    width="100%" height="152"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
+
+---
+
+<p>So... I may have slightly neglected the blog - mainly stemming from how boring this year has become (Boy do I love a-levels) but i believe we can rekindle a form of literary interest</p>
+
+---
+
+<p> Be it English, Econ or RS I find myself sitting in the same plastic chair thinking the same plasticated thoughts - all of which are just some emalgum of feignted intellectual escapes from the monotony of my subjects (Is the good self evident? if it was I might know). Anyway, plastic... to be plasticated. To meld, mold, melt and form a cohesive though, not simply the wanderings of my mind, requires a level of complete boredom with the information around me I reach a semi meditative state.</p>
+
+<p> This boredom I found, sitting upon my plastic chair, tipping further... further backwards as if balancing a 3/4 empty (or perhaps 1/4 full) glass of water on its edge. Tipping deeper into the depths of my boredom, as if the works of Donne have (much the same as how Donne asks for God to purify him with his fiery zeal), melted my mind, plasticised my neurons, resolved and turned itself into a dire dew, running down the veins and folds of a leaf.</p>
+
+<p> Leaves. The leaves. I see the effect of spring from my plastic chair. Through the sheet of glass, which entraps the mind and voice of the students, I see the leaves. How the wind, (the same wind which gusts rudely to disturb my fringe) preturbs the leaves, which freshly budded from their branches, turn to meet the sun. These leaves, unaware of the works of Donne, facing none of the boredom that I do, their concern only their placement in regards to the photons which they receive, rattle listlessly against the air.</p>
+
+<p> When a leaf leaves, or a stem stems is it the verb that defines the noun. Or the noun the verb. Does the start of growth stem from the image of plant growth, and fresh roots. Or do the leaves on the tree leave because the leafs fall away in fall. Much like this do I think my thoughts or rather are my thoughts just the output of my thinking. Alas, I must return to my chair, and shut the window to entrap my thoughts back into the confines of the classroom lest the poems of Donne, suddenly develop another stanza, which goes unnoticed.</p>
+
+![leaves](/assets/images/leaves/facts.jpg){: .accent }
+
+---
